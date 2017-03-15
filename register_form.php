@@ -23,10 +23,38 @@
 <br />
 จังหวัด: <br />
 <select name="province" id="province">
-<option value="value">---เลือกจังหวัด---</option>
-<option value="value">กรุงเทพมหานคร</option>
-<option value="value">ชลบุรี</option>
+<option value="">---เลือกจังหวัด---</option>
+<option value="1">กรุงเทพมหานคร</option>
+<option value="2">ชลบุรี</option>
 </select><br />
 <br/><br/>
-<input type="submit" id="submit" value="submit" name="submit" />
+<input type="submit" id="submit" value="Submit" name="submit" />
 </form>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+$('#submit').on('click', function ( event ) {
+    var valid = true,
+    errorMessage ="";
+
+
+    if ($('#name').val() == '') {
+        errorMessage = "โปรดป้อนชื่อ-นามสกุล \n";
+        valid = false;
+}
+   if($('#address').val() == ''){
+       errorMessage += "โปรดป้อนที่อยู่\n";
+       valid = false;
+   }
+   if($('#email').val() ==''){
+       errorMessage += "โปรดป้อน email\n";
+       valid = false;
+   }
+   if( !valid && errorMessage.length > 0){
+       alert(errorMessage);
+       event.preventDefault();
+   }
+});
+</script>
+</body>
+</html>
