@@ -9,7 +9,7 @@
 ชื่อ-นามสกุล: <br/>
 <input type="text" class="text" name="name" id="name" /> <br/>
 อีเมล์: <br/>
-<input type="text" class="text" name="email" id="email" /> <br/>
+<input type="email" class="text" name="email" id="email" /> <br/>
 เพศ: <br />
 <input type="radio" class="radio" name="sex" id="sex" value="M" /> ชาย
 <input type="radio" class="radio" name="sex" id="sex" value="F" /> หญิง 
@@ -48,7 +48,7 @@ $('#submit').on('click', function ( event ) {
    }
    if($('#email').val() ==''){
        errorMessage += "โปรดป้อน email\n";
-       valid = false;
+       valid = true;
    }
    if( !valid && errorMessage.length > 0){
        alert(errorMessage);
